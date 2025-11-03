@@ -1,6 +1,6 @@
 package com.java.gestaoemprestimopix.mapper;
-import com.java.gestaoemprestimopix.dto.Entity1.Request.ClienteRequestDTO;
-import com.java.gestaoemprestimopix.dto.Entity1.Response.ClienteResponseDTO;
+import com.java.gestaoemprestimopix.dto.Request.ClienteRequestDTO;
+import com.java.gestaoemprestimopix.dto.Response.ClienteResponseDTO;
 import com.java.gestaoemprestimopix.entity.Cliente;
 import org.springframework.stereotype.Component;
 

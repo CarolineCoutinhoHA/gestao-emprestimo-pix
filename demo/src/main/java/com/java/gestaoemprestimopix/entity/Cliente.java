@@ -1,4 +1,5 @@
 package com.java.gestaoemprestimopix.entity;
+import com.java.gestaoemprestimopix.entity.model.Emprestimo;
 import com.java.gestaoemprestimopix.enums.StatusCliente;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -46,7 +47,7 @@ public class Cliente {
     private List<Simulacao> simulacoes;
 
     @OneToOne(mappedBy = "cliente")
-    private Login login;
+    private Usuario usuario;
 
     @OneToOne(mappedBy = "cliente")
     private Conta conta;

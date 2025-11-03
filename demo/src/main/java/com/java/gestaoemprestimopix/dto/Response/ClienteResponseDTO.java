@@ -1,4 +1,4 @@
-package com.java.gestaoemprestimopix.dto.Entity1.Response;
+package com.java.gestaoemprestimopix.dto.Response;
 
 import com.java.gestaoemprestimopix.enums.StatusCliente;
 
