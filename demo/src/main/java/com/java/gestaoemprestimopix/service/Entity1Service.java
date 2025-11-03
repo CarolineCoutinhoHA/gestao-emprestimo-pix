@@ -1,3 +1,5 @@
+package com.java.gestaoemprestimopix.service;
+
 import com.example.demo.dto.Entity1DTO;
 import com.example.demo.entity.Entity1;
 import com.example.demo.exception.EntityNotFoundException;
