@@ -1,4 +1,4 @@
-package com.java.gestaoemprestimopix.entity.enums;
+package com.java.gestaoemprestimopix.enums;
 
 public enum StatusCliente {
 

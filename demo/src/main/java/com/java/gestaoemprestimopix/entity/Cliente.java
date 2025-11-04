@@ -1,5 +1,5 @@
 package com.java.gestaoemprestimopix.entity;
-import com.java.gestaoemprestimopix.entity.enums.StatusCliente;
+import com.java.gestaoemprestimopix.enums.StatusCliente;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

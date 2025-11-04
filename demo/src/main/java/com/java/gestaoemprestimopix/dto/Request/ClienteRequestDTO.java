@@ -1,6 +1,6 @@
 package com.java.gestaoemprestimopix.dto.Request;
 
-import com.java.gestaoemprestimopix.entity.enums.StatusCliente;
+import com.java.gestaoemprestimopix.enums.StatusCliente;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

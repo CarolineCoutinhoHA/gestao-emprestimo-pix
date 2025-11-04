@@ -2,7 +2,7 @@ package com.java.gestaoemprestimopix.controller;
 
 import com.java.gestaoemprestimopix.dto.Request.ClienteRequestDTO;
 import com.java.gestaoemprestimopix.dto.Response.ClienteResponseDTO;
-import com.java.gestaoemprestimopix.entity.enums.StatusCliente;
+import com.java.gestaoemprestimopix.enums.StatusCliente;
 import com.java.gestaoemprestimopix.service.ClienteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

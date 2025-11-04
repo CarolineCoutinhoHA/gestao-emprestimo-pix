@@ -1,7 +1,7 @@
 package com.java.gestaoemprestimopix.entity;
 
-import com.java.gestaoemprestimopix.entity.enums.RiscoEmprestimo;
-import com.java.gestaoemprestimopix.entity.enums.StatusEmprestimo;
+import com.java.gestaoemprestimopix.enums.RiscoEmprestimo;
+import com.java.gestaoemprestimopix.enums.StatusEmprestimo;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
