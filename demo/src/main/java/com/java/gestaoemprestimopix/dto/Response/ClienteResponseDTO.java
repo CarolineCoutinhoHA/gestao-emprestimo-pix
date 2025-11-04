@@ -1,6 +1,6 @@
 package com.java.gestaoemprestimopix.dto.Response;
 
-import com.java.gestaoemprestimopix.enums.StatusCliente;
+import com.java.gestaoemprestimopix.entity.enums.StatusCliente;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

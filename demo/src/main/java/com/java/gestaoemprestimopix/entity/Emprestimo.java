@@ -1,4 +1,4 @@
-package com.java.gestaoemprestimopix.entity.model;
+package com.java.gestaoemprestimopix.entity;
 
 import com.java.gestaoemprestimopix.entity.enums.RiscoEmprestimo;
 import com.java.gestaoemprestimopix.entity.enums.StatusEmprestimo;

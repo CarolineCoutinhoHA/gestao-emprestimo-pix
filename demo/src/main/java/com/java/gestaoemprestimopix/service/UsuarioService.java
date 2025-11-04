@@ -3,7 +3,6 @@ package com.java.gestaoemprestimopix.service;
 import com.java.gestaoemprestimopix.dto.Request.UsuarioRequest;
 import com.java.gestaoemprestimopix.dto.Response.UsuarioResponse;
 import com.java.gestaoemprestimopix.entity.Usuario;
-import com.java.gestaoemprestimopix.enums.StatusUsuario;
 import com.java.gestaoemprestimopix.exception.EntityNotFoundException;
 import com.java.gestaoemprestimopix.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;

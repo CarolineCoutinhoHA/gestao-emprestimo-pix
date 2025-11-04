@@ -3,7 +3,7 @@ package com.java.gestaoemprestimopix.service;
 import com.java.gestaoemprestimopix.dto.Request.ClienteRequestDTO;
 import com.java.gestaoemprestimopix.dto.Response.ClienteResponseDTO;
 import com.java.gestaoemprestimopix.entity.Cliente;
-import com.java.gestaoemprestimopix.enums.StatusCliente;
+import com.java.gestaoemprestimopix.entity.enums.StatusCliente;
 import com.java.gestaoemprestimopix.exception.ClientStatusNotFound;
 import com.java.gestaoemprestimopix.exception.ClienteNotFound;
 import com.java.gestaoemprestimopix.mapper.ClienteMapper;

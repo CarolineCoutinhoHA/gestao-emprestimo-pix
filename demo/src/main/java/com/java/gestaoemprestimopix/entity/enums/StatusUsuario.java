@@ -1,4 +1,4 @@
-package com.java.gestaoemprestimopix.enums;
+package com.java.gestaoemprestimopix.entity.enums;
 
 public enum StatusUsuario {
     ATIVO,
