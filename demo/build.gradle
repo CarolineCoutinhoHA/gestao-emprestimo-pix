@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.5.7'
+    id 'org.springframework.boot' version '3.5.7' // Versão atualizada
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -16,7 +16,7 @@ java {
 
 configurations {
     compileOnly {
-        extendsFrom annotationProcessor
+        extendsFrom annotationProcessor // Necessário para o Lombok/MapStruct
     }
 }
 
@@ -24,59 +24,46 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    set('springAiVersion', "1.0.3")
-}
-
 dependencies {
     // ----------------------------------------------------
-    // IMPLEMENTAÇÕES EXISTENTES
+    // BASE E PERSISTÊNCIA (Obrigatório)
     // ----------------------------------------------------
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
-    implementation 'org.springframework.boot:spring-boot-starter-graphql'
-    implementation 'org.springframework.boot:spring-boot-starter-mail'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-web-services'
-    implementation 'org.springframework.ai:spring-ai-markdown-document-reader'
-    implementation 'org.springframework.ai:spring-ai-pdf-document-reader'
+    implementation 'org.springframework.boot:spring-boot-starter-web' // REST API
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // JPA
+    implementation 'org.springframework.boot:spring-boot-starter-validation' // Bean Validation
+    implementation 'org.springframework.boot:spring-boot-starter-security' // Spring Security
 
     // ----------------------------------------------------
-    // MAPSTRUCT E LOMBOK
+    // SWAGGER / OPENAPI (Documentação)
     // ----------------------------------------------------
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.2'
 
-    // 1. MapStruct (Interface)
-    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    // ----------------------------------------------------
+    // MAPSTRUCT (Mapeamento Automático)
+    // ----------------------------------------------------
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final' // Biblioteca principal
 
-    // 2. Lombok (Junto com compileOnly)
+    // ----------------------------------------------------
+    // LOMBOK (Boas práticas de código)
+    // ----------------------------------------------------
     compileOnly 'org.projectlombok:lombok'
 
-    // 3. PROCESSADORES DE ANOTAÇÃO
-
-    // Processador do MapStruct (O gerador de código)
+    // ----------------------------------------------------
+    // PROCESSADORES DE ANOTAÇÃO (O Segredo da Geração Automática!)
+    // ----------------------------------------------------
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
-
-    // Processador do Lombok (Obrigatório)
     annotationProcessor 'org.projectlombok:lombok'
-
-    // Ligação entre Lombok e MapStruct (Para evitar conflitos)
-    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0' // Ligação Lombok-MapStruct
 
     // ----------------------------------------------------
-    // TESTES
+    // DEPENDÊNCIAS DE TESTE
     // ----------------------------------------------------
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.graphql:spring-graphql-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
 
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.ai:spring-ai-bom:${springAiVersion}"
-    }
+    // Adicionar H2 para testes e desenvolvimento leve (Se for usar DB em memória)
+    // runtimeOnly 'com.h2database:h2'
 }
 
 tasks.named('test') {
