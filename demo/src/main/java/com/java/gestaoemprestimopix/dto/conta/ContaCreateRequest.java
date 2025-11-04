@@ -8,25 +8,27 @@ import jakarta.validation.constraints.NotNull;
 
 public class ContaCreateRequest {
 
-    @NotNull
+    @NotNull(message = "O número da conta é obrigatório.")
     private Long numeroConta;
-    @NotBlank
+    @NotBlank(message = "O número da agência é obrigatório.")
     private String agencia;
     private BigDecimal saldo;
     private LocalDateTime dataCriacao;
     private boolean statusConta;
+    private String usuarioId;
 
     // Constructors
     public ContaCreateRequest() {
     }
 
     public ContaCreateRequest(Long numeroConta, String agencia, BigDecimal saldo, LocalDateTime dataCriacao,
-            boolean statusConta) {
+            boolean statusConta, String usuarioId) {
         this.numeroConta = numeroConta;
         this.agencia = agencia;
         this.saldo = saldo;
         this.dataCriacao = dataCriacao;
         this.statusConta = statusConta;
+        this.usuarioId = usuarioId;
     }
 
     // Getters and Setters
@@ -68,6 +70,14 @@ public class ContaCreateRequest {
 
     public void setStatusConta(boolean statusConta) {
         this.statusConta = statusConta;
+    }
+
+    public String getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(String usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
 }

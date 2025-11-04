@@ -8,11 +8,11 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import com.java.gestaoemprestimopix.dto.conta.ContaCreateRequest;
-import com.java.gestaoemprestimopix.dto.conta.ContaUpdateRequest;
 import com.java.gestaoemprestimopix.dto.conta.ContaResponse;
+import com.java.gestaoemprestimopix.dto.conta.ContaUpdateRequest;
 import com.java.gestaoemprestimopix.entity.Conta;
-import com.java.gestaoemprestimopix.repository.ContaRepository;
 import com.java.gestaoemprestimopix.mapper.ContaMapper;
+import com.java.gestaoemprestimopix.repository.ContaRepository;
 
 @Service
 public class ContaService {
@@ -22,7 +22,7 @@ public class ContaService {
     public ContaService(ContaRepository contaRepository) {
         this.contaRepository = contaRepository;
     }
-    
+
     public ContaResponse criarConta(ContaCreateRequest request) {
         Conta conta = ContaMapper.map(request);
         if (request.getAgencia().isBlank()) {
@@ -75,13 +75,13 @@ public class ContaService {
 
     private ContaResponse contaResponse(final Conta conta) {
         return new ContaResponse(
-            conta.getIdConta().toString(),
-            conta.getNumeroConta(),
-            conta.getAgencia(),
-            conta.getSaldo(),
-            conta.getDataCriacao(),
-            conta.isStatusConta()
-        );
+                conta.getIdConta().toString(),
+                conta.getNumeroConta(),
+                conta.getAgencia(),
+                conta.getSaldo(),
+                conta.getDataCriacao(),
+                conta.isStatusConta(),
+                conta.getUsuario());
     }
 
 }

@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 
 public class ContaUpdateRequest {
 
-    @NotNull
+    @NotNull(message = "O valor do saldo não pode estar vazio.")
     private BigDecimal saldo;
 
     // Constructors
