@@ -70,6 +70,10 @@ public class Emprestimo {
     @ToString.Exclude
     private Conta conta;
 
+    @OneToOne
+    @JoinColumn(name = "id_simulacao", nullable = true)
+    private Simulacao simulacao;
+
     @OneToMany(mappedBy = "emprestimo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AgendamentoPix> agendamento = new ArrayList<>();
 
@@ -92,6 +96,10 @@ public class Emprestimo {
     }
 
     public void atribuirCliente(Cliente cliente){
+        this.cliente = cliente;
+    }
+
+    public void atribuirEmprestimo(Cliente cliente){
         this.cliente = cliente;
     }
 }

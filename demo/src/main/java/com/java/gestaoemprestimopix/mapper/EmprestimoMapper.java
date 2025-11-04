@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface EmprestimoMapper {
 
-    EmprestimoResponseDTO toDto(Emprestimo emprestimo);
+    EmprestimoResponseDTO toResponseDto(Emprestimo emprestimo);
 
     Emprestimo toEntity (EmprestimoResponseDTO emprestimoResponseDTO);
 
