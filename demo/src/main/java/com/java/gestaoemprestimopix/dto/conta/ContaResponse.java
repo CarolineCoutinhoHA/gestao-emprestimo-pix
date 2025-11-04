@@ -3,6 +3,8 @@ package com.java.gestaoemprestimopix.dto.conta;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import com.java.gestaoemprestimopix.entity.Usuario;
+
 public class ContaResponse {
 
     private String idConta;
@@ -11,19 +13,21 @@ public class ContaResponse {
     private BigDecimal saldo;
     private LocalDateTime dataCriacao;
     private boolean statusConta;
+    private Usuario usuario;
 
     // Constructors
     public ContaResponse() {
     }
 
     public ContaResponse(String idConta, Long numeroConta, String agencia, BigDecimal saldo, LocalDateTime dataCriacao,
-            boolean statusConta) {
+            boolean statusConta, Usuario usuario) {
         this.idConta = idConta;
         this.numeroConta = numeroConta;
         this.agencia = agencia;
         this.saldo = saldo;
         this.dataCriacao = dataCriacao;
         this.statusConta = statusConta;
+        this.usuario = usuario;
     }
 
     // Getters and Setters
@@ -73,6 +77,14 @@ public class ContaResponse {
 
     public void setStatusConta(boolean statusConta) {
         this.statusConta = statusConta;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
 }
